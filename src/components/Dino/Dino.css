@@ -1,0 +1,35 @@
+.dino {
+  width: 44px;
+  height: 47px;
+  position: absolute;
+  left: 50px;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg height='2500' viewBox='13.848000000000003 0 283.6449999999999 305.4' width='2328' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M269.352 91.664h-42.436V80.04h70.577v-65.73h-14.294V0H168.4v14.309h-13.848v91.664H140.26v13.861h-20.994v14.309H98.271v14.308H83.977v13.862H58.069v-14.309H44.222v-13.861H29.928v-28.17h-16.08v86.746h13.847v14.308h14.293v13.862h13.848v14.308H70.13v13.862h13.847v56.34h30.375V289.3h-13.848V277.23h13.848v-13.862h14.294V249.06h11.613v14.308h14.294V305.4h30.375V289.3h-14.294v-54.104h14.294V220.89h13.847v-21.016h14.294v-49.186h11.614v13.862h16.527v-30.406h-28.14v-25.934h56.282z' fill='%23535353'/%3E%3Cpath d='M182.248 20.569h16.974V37.56h-16.974z' fill='white'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform-origin: bottom center;
+  will-change: transform;
+  transition: all 0.3s ease;
+}
+
+[data-theme='dark'] .dino {
+  background-image: url("data:image/svg+xml,%3Csvg height='2500' viewBox='13.848000000000003 0 283.6449999999999 305.4' width='2328' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M269.352 91.664h-42.436V80.04h70.577v-65.73h-14.294V0H168.4v14.309h-13.848v91.664H140.26v13.861h-20.994v14.309H98.271v14.308H83.977v13.862H58.069v-14.309H44.222v-13.861H29.928v-28.17h-16.08v86.746h13.847v14.308h14.293v13.862h13.848v14.308H70.13v13.862h13.847v56.34h30.375V289.3h-13.848V277.23h13.848v-13.862h14.294V249.06h11.613v14.308h14.294V305.4h30.375V289.3h-14.294v-54.104h14.294V220.89h13.847v-21.016h14.294v-49.186h11.614v13.862h16.527v-30.406h-28.14v-25.934h56.282z' fill='%23ffffff'/%3E%3Cpath d='M182.248 20.569h16.974V37.56h-16.974z' fill='%23535353'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.dino.jumping {
+  animation: jump 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dino.fast-falling {
+  animation: none;
+  transform: rotate(15deg);
+  transition: transform 0.1s linear;
+}
+
+@keyframes jump {
+  0% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-80px) rotate(-5deg); }
+  50% { transform: translateY(-100px) rotate(0deg); }
+  75% { transform: translateY(-60px) rotate(5deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+} 
