@@ -110,11 +110,12 @@ const Game = () => {
         gameOverSoundRef.current.currentTime = 0;
         gameOverSoundRef.current.play();
 
-        if (score > highScore) {
+        const currentHighScore = parseInt(localStorage.getItem('highScore')) || 0;
+        if (score > currentHighScore) {
             setHighScore(score);
             localStorage.setItem('highScore', score.toString());
         }
-    }, [score, highScore]);
+    }, [score]);
 
     useEffect(() => {
         let scoreInterval;
